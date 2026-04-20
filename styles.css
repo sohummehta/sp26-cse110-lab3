@@ -55,7 +55,7 @@ nav {
   border: 2px solid rgb(15, 52, 96);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; 
   flex-wrap: wrap;
 
   & a {
