@@ -1,20 +1,25 @@
-/* CSS Variable with fallback */
 :root {
   --main-bg: #f4f6f9;
 }
 
-/* Use variable with fallback */
 body {
   background-color: var(--main-bg, white);
   font-family: Arial, sans-serif;
+  margin: 0 auto;
 }
 
 h1 {
   color: rgb(15, 52, 96);
+  margin-top: 20px;
+  margin-bottom: 8px;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 nav {
   background-color: color-mix(in srgb, rgb(15, 52, 96) 85%, white 15%);
+  padding: 10px 16px;
+  border: 2px solid rgb(15, 52, 96);
 }
 
 h2 {
@@ -27,6 +32,10 @@ p {
 
 footer {
   background-color: hsla(210, 50%, 90%, 0.8);
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 strong {
@@ -35,4 +44,19 @@ strong {
 
 li {
   color: color(display-p3 0.1 0.1 0.1);
+}
+
+main {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* border on each section */
+section {
+  border-style: solid;
+  border-color: #2980b9;
+  border-width: 1px;
+  border-radius: 8px;
+  margin: 16px 0;
+  padding: 16px 24px;
 }
