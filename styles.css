@@ -1,3 +1,4 @@
+/* CSS Variable with fallback */
 :root {
   --main-bg: #f4f6f9;
 }
@@ -6,6 +7,16 @@ body {
   background-color: var(--main-bg, white);
   font-family: Arial, sans-serif;
   margin: 0 auto;
+  min-width: 320px;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 5;
+  padding: 0.5em 1rem;
+  text-align: center;
 }
 
 h1 {
@@ -14,6 +25,7 @@ h1 {
   margin-bottom: 8px;
   margin-left: 0;
   margin-right: 0;
+  font-size: 2rem;
 }
 
 nav {
@@ -22,12 +34,29 @@ nav {
   border: 2px solid rgb(15, 52, 96);
 }
 
+nav a {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  padding: 0 0.5em;
+}
+
+nav a:hover {
+  color: #aed6f1;
+  text-decoration: underline;
+}
+
+nav a:active {
+  color: #f4f6f9;
+}
+
 h2 {
   color: #2980b9;
 }
 
 p {
   color: hsl(0, 0%, 15%);
+  font-size: 1rem;
 }
 
 footer {
@@ -36,6 +65,8 @@ footer {
   padding-bottom: 16px;
   padding-left: 24px;
   padding-right: 24px;
+  font-size: 12pt;
+  text-align: center;
 }
 
 strong {
@@ -48,15 +79,50 @@ li {
 
 main {
   max-width: 860px;
+  min-width: 300px;
+  width: 90%;
   margin: 0 auto;
 }
 
-/* border on each section */
 section {
+  position: relative;
   border-style: solid;
   border-color: #2980b9;
   border-width: 1px;
   border-radius: 8px;
   margin: 16px 0;
   padding: 16px 24px;
+}
+
+img {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin-bottom: 0.5cm;
+}
+
+label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+}
+
+button[type="submit"] {
+  background-color: rgb(15, 52, 96);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 14pt;
+  width: 200px;
+  height: 44px;
+}
+
+button[type="submit"]:hover {
+  background-color: #2980b9;
+}
+
+button[type="submit"]:active {
+  background-color: peachpuff;
 }
