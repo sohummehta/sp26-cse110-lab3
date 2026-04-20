@@ -3,6 +3,10 @@
   --main-bg: #f4f6f9;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: var(--main-bg, white);
   font-family: Arial, sans-serif;
@@ -29,33 +33,45 @@ h1 {
   font-family: 'Tangerine', cursive;
 }
 
+h2, h3 {
+  margin-bottom: 8px;
+}
+
+h2 {
+  color: #2980b9;
+}
+
+h2 + h3 {
+  margin-top: 4px;
+}
+
+h2 ~ p {
+  line-height: 1.6;
+}
+
 nav {
   background-color: color-mix(in srgb, rgb(15, 52, 96) 85%, white 15%);
   padding: 10px 16px;
   border: 2px solid rgb(15, 52, 96);
   display: flex;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   flex-wrap: wrap;
-}
 
-nav a {
-  color: white;
-  text-decoration: none;
-  padding: 0 0.5em;
-}
+  & a {
+    color: white;
+    text-decoration: none;
+    padding: 0 0.5em;
 
-nav a:hover {
-  color: #aed6f1;
-  text-decoration: underline;
-}
+    &:hover {
+      color: #aed6f1;
+      text-decoration: underline;
+    }
 
-nav a:active {
-  color: #f4f6f9;
-}
-
-h2 {
-  color: #2980b9;
+    &:active {
+      color: #f4f6f9;
+    }
+  }
 }
 
 p {
@@ -88,6 +104,10 @@ main {
   margin: 0 auto;
 }
 
+main > section {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
 section {
   position: relative;
   border-style: solid;
@@ -98,11 +118,30 @@ section {
   padding: 16px 24px;
 }
 
+section:has(h3) {
+  background-color: rgba(41, 128, 185, 0.03);
+}
+
 #attendance ul {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: minmax(24px, auto);
   gap: 8px;
+}
+
+summary + p {
+  padding-left: 16px;
+}
+
+.reminder {
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin: 12px 0;
+}
+
+div.reminder {
+  background-color: rgba(41, 128, 185, 0.08);
+  border-left: 3px solid #2980b9;
 }
 
 img {
@@ -128,6 +167,7 @@ button[type="submit"] {
   font-size: 14pt;
   width: 200px;
   height: 44px;
+  cursor: pointer;
 }
 
 button[type="submit"]:hover {
@@ -138,30 +178,58 @@ button[type="submit"]:active {
   background-color: peachpuff;
 }
 
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  nav {
+    gap: 4px;
+    font-size: 0.9rem;
+  }
+
+  #attendance ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  section {
+    padding: 12px 16px;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+    font-size: 12pt;
+  }
+
+  video {
+    max-width: 100%;
+  }
+}
+
 @media (max-width: 480px) {
-    h1 {
+  h1 {
     font-size: 1.2rem;
   }
- 
+
   nav {
     flex-direction: column;
     gap: 6px;
     font-size: 0.85rem;
   }
- 
+
   #attendance ul {
     grid-template-columns: 1fr;
   }
- 
+
   section {
     padding: 10px 12px;
     border-radius: 4px;
   }
- 
+
   main {
     width: 95%;
   }
- 
+
   img {
     max-width: 100%;
   }
@@ -177,36 +245,8 @@ button[type="submit"]:active {
     max-width: 100%;
     box-sizing: border-box;
   }
-  
+
   fieldset {
-    min-width: 0;   
-  }
-}
-
-@media (max-width: 768px) {
-  h1 {
-    font-size: 1.5rem;
-  }
- 
-  nav {
-    gap: 4px;
-    font-size: 0.9rem;
-  }
- 
-  #attendance ul {
-    grid-template-columns: repeat(2, 1fr);
-  }
- 
-  section {
-    padding: 12px 16px;
-  }
- 
-  button[type="submit"] {
-    width: 100%;
-    font-size: 12pt;
-  }
-
-  video {
-    max-width: 100%;
+    min-width: 0;
   }
 }
