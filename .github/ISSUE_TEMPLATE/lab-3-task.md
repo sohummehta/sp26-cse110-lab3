@@ -1,9 +1,9 @@
 ---
 name: Lab 3 Task
 about: Describe this issue template's purpose here.
-title: "[Task]"
+title: ''
 labels: ''
-assignees: ''
+assignees: sohummehta
 
 ---
 
