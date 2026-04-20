@@ -136,3 +136,76 @@ button[type="submit"]:hover {
 button[type="submit"]:active {
   background-color: peachpuff;
 }
+
+@media (max-width: 480px) {
+    h1 {
+    font-size: 1.2rem;
+  }
+ 
+  nav {
+    flex-direction: column;
+    gap: 6px;
+    font-size: 0.85rem;
+  }
+ 
+  #attendance ul {
+    grid-template-columns: 1fr;
+  }
+ 
+  section {
+    padding: 10px 12px;
+    border-radius: 4px;
+  }
+ 
+  main {
+    width: 95%;
+  }
+ 
+  img {
+    max-width: 100%;
+  }
+
+  video {
+    max-width: 100%;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  fieldset {
+    min-width: 0;   
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+ 
+  nav {
+    gap: 4px;
+    font-size: 0.9rem;
+  }
+ 
+  #attendance ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+ 
+  section {
+    padding: 12px 16px;
+  }
+ 
+  button[type="submit"] {
+    width: 100%;
+    font-size: 12pt;
+  }
+
+  video {
+    max-width: 100%;
+  }
+}
